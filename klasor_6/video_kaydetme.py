@@ -1,7 +1,7 @@
 import cv2
 cap = cv2.VideoCapture(0)
 
-fileName = "C:\+aaaaa.avi"
+fileName = "C:\\kayit.avi"
 codec = cv2.VideoWriter_fourcc("W","M","V","2")
 frameRate = 30
 resolution = (640,480)
