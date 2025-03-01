@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 
 cap = cv2.VideoCapture(0)
+# Cascade dosyası çalışmaya ekleniyor
 face_cascade = cv2.CascadeClassifier("D:\\haar_cascade\\frontalface.xml")
 
 while 1:
@@ -10,8 +11,10 @@ while 1:
 
     gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
 
+    # bulunan yüzlerin kordinatlarını faces değişkeninde tutuluyor
     faces = face_cascade.detectMultiScale(gray,1.3,6)
 
+    # yüzlerin tespitinde bulunan konumlar alınır ve yüzler bir dikdörtgenle belirlenir
     for (x,y,w,h) in faces:
         cv2.rectangle(frame,(x,y),(x+w,y+h),(0,0,255),2)
 

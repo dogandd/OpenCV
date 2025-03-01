@@ -71,7 +71,7 @@ while 1:
         c = math.sqrt((extbot[0]-exttop[0])**2 + (extbot[1]-exttop[1])**2 )
         
 
-        # değerlerin 0 olma durumunda 0 a blümden hata çıkması durumu için try kulanılıyor
+        # değerlerin 0 olma durumunda 0 a bölümden hata çıkması durumu için try kulanılıyor
         try:
             angle_ab = math.acos((a**2+b**2-c**2)/(2*b*c))*57
             cv2.putText(roi,str(angle_ab),(extright[0]-10,extright[1]),cv2.FONT_HERSHEY_SIMPLEX,1,(0,0,255),2,cv2.LINE_AA)

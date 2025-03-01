@@ -10,6 +10,7 @@ rectangle = np.zeros((512,512,3), np.uint8,) + 255
 cv2.rectangle(rectangle, (150,150), (350, 350), (0,0,255), -1)
 
 # addWeighted fonksiyonuyla istediğimiz ilk önce resmi sonra yüzdelik ağırlığı giriliyor
+# resimler istenilen yüzdeliğe göre birleştirilir
 dst = cv2.addWeighted(circle, 0.7, rectangle, 0.3, 0)
 
 cv2.imshow("dst",dst)

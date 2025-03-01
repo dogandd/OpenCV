@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 path = "D:\\Resimler\\map.jpg"
 img = plt.imread(path)
 
-
+# birden çok grafiği birlikte göstermek için subplot kullanılır (4 satır, 2 sütun,1.grafik) gibi
 plt.subplot(4,2,1)
 plt.title("original image")
 plt.imshow(img)

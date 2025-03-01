@@ -19,6 +19,8 @@ result = cv2.matchTemplate(gray_img,template,cv2.TM_CCOEFF_NORMED)
 location = np.where(result >= 0.95)
 
 # anlamlı kordinatlar elde etmek için uygulanıyor
+# where fonksiyonundan gelen dizi ziple tersten okunur
+# bulunan noltaya göre dikdörtgen oluşturulur
 for point in zip(*location[::-1]):
     cv2.rectangle(img, point,(point[0]+w,point[1]+h),(0,255,0),3)
 

@@ -5,6 +5,7 @@ img_median = cv2.imread("D:\\Resimler\\_median.png")
 img_filter = cv2.imread("D:\\Resimler\\_filter.png")
 img_bilateral = cv2.imread("D:\\Resimler\\_bilateral.png")
 
+# blur ekleniyor pozitif tek sayı olmak zorunda
 blur = cv2.blur(img_filter,(5,5))
 blur2 = cv2.GaussianBlur(img_filter,(5,5),cv2.BORDER_DEFAULT)
 blur_m = cv2.medianBlur(img_median,9)

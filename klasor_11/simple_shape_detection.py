@@ -7,11 +7,13 @@ font1 = cv2.FONT_HERSHEY_COMPLEX
 img = cv2.imread("D:\\Resimler\\polygons.png")
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+# threshold değerleri alınır
 _,threshold = cv2.threshold(gray,240,255,cv2.THRESH_BINARY)
-
+# thrashol değerlerinden contourlar bulunur
 contours,_ = cv2.findContours(threshold,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 
 for cnt in contours:
+    # contourlara daha da yaklaşım işlemi yapılıyor
     epsilon = 0.01*cv2.arcLength(cnt,True)
     approx = cv2.approxPolyDP(cnt,epsilon,True)
 
@@ -22,6 +24,7 @@ for cnt in contours:
     x = approx.ravel()[0]
     y = approx.ravel()[1]
     
+    # approxdan gelen değerlere göre şekillere isim veriliyor
     if len(approx) == 3:
         cv2.putText(img,"triangle",(x,y),font1,1,(0))
     if len(approx) == 4:

@@ -9,6 +9,8 @@ while 1:
     # roi alanı belirlendi
     roi = frame[80:210, 230:450]
     rows,cols,_ = roi.shape
+
+    # gözün alanını belirtmek için dikdörtgen içine alınıyor
     cv2.rectangle(frame,(230,80),(450,210),(0,0,255),0)
 
     gray = cv2.cvtColor(roi,cv2.COLOR_BGR2GRAY)
@@ -23,7 +25,9 @@ while 1:
         # sol üst kordinat (x,y)
         # sağ alt kordinat (x+w,y+h)
         (x,y,w,h) = cv2.boundingRect(cnt)
+        # gözbebeğinin etrafına belirtmek için dikdörtgen çizer
         cv2.rectangle(roi,(x,y),(x+w,y+h),(255,0,0),2)
+        # gözbebeğinin merkezinden geçen birbirne dik iki çizgi oluşturulur
         cv2.line(roi,(x+int(w/2),0),(x+int(w/2),rows),(0,255,0),2)
         cv2.line(roi,(0,y+int(h/2)),(cols,y+int(h/2)),(0,255,0),2)
         # contour değerleri sıralı olduğu için biz en büyük değer lazım o yüzden ilkini kullanıp döngüden çıkılıyor

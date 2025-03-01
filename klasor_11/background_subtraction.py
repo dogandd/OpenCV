@@ -4,6 +4,7 @@ import numpy as np
 cap = cv2.VideoCapture("D:\\Videolar\\car.mp4")
 
 _,first_frame = cap.read()
+# videonun ilk framei tutuluyor
 first_frame = cv2.resize(first_frame,(640,480))
 first_gray = cv2.cvtColor(first_frame,cv2.COLOR_BGR2GRAY)
 first_gray = cv2.GaussianBlur(first_gray,(5,5),0)
@@ -12,6 +13,7 @@ while 1:
     frame = cv2.resize(frame,(640,480))
 
     gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    # blur ekleniyor
     gray = cv2.GaussianBlur(gray,(5,5),0)   
 
     # absdiff fonksiyonuyla ilk frame ile güncel frame i karşılaştırılır 

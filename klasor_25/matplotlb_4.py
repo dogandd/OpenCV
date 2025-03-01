@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 path = 'D:\\Resimler\\coins.jpg'
-
+# matplotlib fonksiyonuyla fotoğraf okumak için imread kullanılır
 img = plt.imread(path)
 
 print(img);print("type",type(img));print("shape",img.shape);print("ndim:",img.ndim);print("size:",img.size);print("dtpe:",img.dtype)

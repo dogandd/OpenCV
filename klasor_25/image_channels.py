@@ -7,7 +7,7 @@ img = plt.imread(path)
 r = img[:,:,0]
 g = img[:,:,1]
 b = img[:,:,2]
-
+# dstack ile dizileri yığın olarak kullanılır
 output = np.dstack((r,g,b))
 plt.imshow(output)
 plt.show()
@@ -27,4 +27,5 @@ for i in range(4):
         plt.imshow(output[i])
     else:
         plt.imshow(output[i],cmap='gray')
-    plt.show()"""
+    plt.show()
+"""
